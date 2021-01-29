@@ -45,6 +45,11 @@ dts_eos_tick_t dts_eos_tick_from_millisecond(size_t millisecond);
 void *dts_eos_mem_alloc(DTS_EOS_MEM_SIZE_T *size);
 void dts_eos_mem_free(void *ptr);
 
+dts_eos_mutex_t *dts_eos_mutex_new(void);
+void dts_eos_mutex_delete(dts_eos_mutex_t *mutex);
+void dts_eos_mutex_lock(dts_eos_mutex_t *mutex);
+void dts_eos_mutex_unlock(dts_eos_mutex_t *mutex);
+
 #ifdef DTS_EOS_IMPL
 # include <dts_eos_impl.h>
 #endif // DTS_EOS_IMPL_H_

@@ -29,9 +29,12 @@
 
 #include <FreeRTOS.h>
 #include <task.h>
+#include <semphr.h>
+#include <queue.h>
 
 typedef struct tskTaskControlBlock dts_eos_thrd_t;
 #define dts_eos_tick_t TickType_t
+#define dts_eos_mutex_t struct QueueDefinition
 
 #define DTS_EOS_IMPL
 

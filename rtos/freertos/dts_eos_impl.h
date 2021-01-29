@@ -49,4 +49,9 @@ dts_eos_thrd_new(dts_eos_thrd_t **thrd, void (*func)(void *), void *param, size_
 #define dts_eos_tick_from_second(second) ((second)*configTICK_RATE_HZ)
 #define dts_eos_tick_from_millisecond(millisecond) ((millisecond)*(configTICK_RATE_HZ)/1000)
 
+#define dts_eos_mutex_new xSemaphoreCreateMutex
+#define dts_eos_mutex_delete vSemaphoreDelete
+#define dts_eos_mutex_lock(m) xSemaphoreTake(m, 0xFFFF)
+#define dts_eos_mutex_unlock xSemaphoreGive
+
 #endif // DTS_EOS_IMPL_H_

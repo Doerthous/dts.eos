@@ -51,4 +51,9 @@ dts_eos_thrd_new(dts_eos_thrd_t **thrd, void (*func)(void *), void *param, size_
 #define dts_eos_tick_from_second(second) ((second)*RT_TICK_PER_SECOND)
 #define dts_eos_tick_from_millisecond(millisecond) ((millisecond)*(RT_TICK_PER_SECOND)/1000)
 
+#define dts_eos_mutex_new() rt_mutex_create("", RT_IPC_FLAG_FIFO)
+#define dts_eos_mutex_delete rt_mutex_delete
+#define dts_eos_mutex_lock(m) rt_mutex_take(m, RT_WAITING_FOREVER)
+#define dts_eos_mutex_unlock rt_mutex_release
+
 #endif // DTS_EOS_IMPL_H_

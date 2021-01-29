@@ -32,7 +32,7 @@
 typedef struct rt_thread dts_eos_thrd_t;
 #define dts_eos_tick_t rt_tick_t
 #define DTS_EOS_MEM_SIZE_T rt_size_t
-
+#define dts_eos_mutex_t struct rt_mutex
 #define DTS_EOS_IMPL
 
 #endif // DTS_EOS_T_H_

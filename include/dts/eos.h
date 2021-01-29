@@ -42,4 +42,10 @@
 #define mem_alloc dts_eos_mem_alloc
 #define mem_free dts_eos_mem_free
 
+#define mutex_t dts_eos_mutex_t
+#define mutex_new dts_eos_mutex_new
+#define mutex_delete dts_eos_mutex_delete
+#define mutex_lock dts_eos_mutex_lock
+#define mutex_unlock dts_eos_mutex_unlock
+
 #endif // EOS_H_
