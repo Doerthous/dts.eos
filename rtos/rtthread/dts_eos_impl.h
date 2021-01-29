@@ -36,15 +36,19 @@ dts_eos_thrd_new(dts_eos_thrd_t **thrd, void (*func)(void *), void *param, size_
         rt_thread_startup(*thrd);
     }
 }
-
 #define dts_eos_thrd_delete rt_thread_delete
-
 #define dts_eos_thrd_suspend(thrd) do \
 { \
     rt_thread_suspend(thrd); \
     rt_schedule(); \
 } while (0)
-
 #define dts_eos_thrd_resume rt_thread_resume
+#define dts_eos_thrd_sleep rt_thread_delay
+
+#define dts_eos_mem_alloc rt_malloc
+#define dts_eos_mem_free rt_free
+
+#define dts_eos_tick_from_second(second) ((second)*RT_TICK_PER_SECOND)
+#define dts_eos_tick_from_millisecond(millisecond) ((millisecond)*(RT_TICK_PER_SECOND)/1000)
 
 #endif // DTS_EOS_IMPL_H_
