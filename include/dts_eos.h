@@ -34,6 +34,16 @@ void dts_eos_thrd_new(dts_eos_thrd_t **thrd, void (*func)(void *), void *param, 
 void dts_eos_thrd_delete(dts_eos_thrd_t *thrd);
 void dts_eos_thrd_suspend(dts_eos_thrd_t *thrd);
 void dts_eos_thrd_resume(dts_eos_thrd_t *thrd);
+void dts_eos_thrd_sleep(dts_eos_tick_t *ticks);
+
+dts_eos_tick_t dts_eos_tick_from_second(size_t second);
+dts_eos_tick_t dts_eos_tick_from_millisecond(size_t millisecond);
+
+#ifndef DTS_EOS_MEM_SIZE_T
+# define DTS_EOS_MEM_SIZE_T size_t
+#endif
+void *dts_eos_mem_alloc(DTS_EOS_MEM_SIZE_T *size);
+void dts_eos_mem_free(void *ptr);
 
 #ifdef DTS_EOS_IMPL
 # include <dts_eos_impl.h>

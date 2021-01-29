@@ -34,5 +34,12 @@
 #define thrd_delete dts_eos_thrd_delete
 #define thrd_suspend dts_eos_thrd_suspend
 #define thrd_resume dts_eos_thrd_resume
+#define thrd_sleep dts_eos_thrd_sleep
+
+#define tick_from_second dts_eos_tick_from_second
+#define tick_from_millisecond dts_eos_tick_from_millisecond
+
+#define mem_alloc dts_eos_mem_alloc
+#define mem_free dts_eos_mem_free
 
 #endif // EOS_H_
